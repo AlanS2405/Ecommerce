@@ -1,0 +1,47 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color1: hsl(354, 78%, 60%);
+}
+
+.navbar {
+    background-color: red;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box1 {
+    height: 40vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.side_right{
+    background-color: var(--color1);
+}
+
+.side_right img {
+    display: block;
+    max-width: 100%;
+}
+
+@media (min-width: 700px) {
+    
+} */
