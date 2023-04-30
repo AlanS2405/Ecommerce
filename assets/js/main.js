@@ -6,6 +6,8 @@ async function getProducts() {
 
             const res = await data.json();
 
+            window.localStorage.setItem("products", JSON.stringify(res));
+
             return res;
     } catch (error) {
         console.log(error);
@@ -13,9 +15,10 @@ async function getProducts() {
 }
 
 async function main() {
-    const res = await getProducts();
+    const res = JSON.parse(window.localStorage.getItem('products')) || await getProducts();
 
-    console.log(res);
+    console.log(res)
+
 }
 
 main();
