@@ -22,7 +22,17 @@ function printProducts(db) {
     for (const product of db.products) {
         html += `
         <div class="product">
-            <p>${product.name}</p>
+            <div class="product___img">
+                <img src="${product.image}" alt="imagen"/>
+            </div>
+
+            <div class=product__info>
+                <h4>${product.name} | <span> <b>Stock</b>: ${product.quantity}</span></h4>
+                <h5>
+                    ${product.price}
+                    <i class='bx bx-plus' id='${product.id}}'></i>
+                </h5>
+            </div>
         </div>
         `;
     }
