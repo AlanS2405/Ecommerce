@@ -25,7 +25,6 @@
 }
 
 body {
-    padding: 1rem;
     background-color: var(--body-color);
 }
 
@@ -79,8 +78,38 @@ img {
     cursor: pointer;
 }
 
+header {
+    height: var(--h-header);
+    background-color: var(--body-color);
 
-.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    display: flex;
+}
+
+header > nav {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 1rem;
+    
+}
+
+header > nav > i {
+    font-size: 2rem;
+    cursor: pointer;
+
+}
+
+
+/* .navbar {
     background-color: red;
     height: 50px;
     display: flex;
@@ -112,8 +141,101 @@ img {
 .side_right img {
     display: block;
     max-width: 100%;
+} */
+
+/*------------------------------------------------CART*/
+
+.cart {
+    height: calc(100vh - var(--h-header));
+    width: 400px;
+    background-color: var(--body-color);
+    position: fixed;
+    top: var(--h-header);
+    right: 0;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.cart__products {
+    background-color: blue;
+    height: 85%;
+}
+.cart__total {
+    background-color: green;
+    height: 15%;
 }
 
 @media (min-width: 700px) {
     
+}
+
+/*------------------------------------------------FOOTER*/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card-color);
+    width: 100%;
+}
+
+.our_information > h2 {
+    font-size: 20px;
+    padding: 1rem;
+}
+
+.our_information > h3 {
+    font-size: 16px;
+    font-weight: lighter;
+    padding: 0 1rem;
+    color: var(--text-color);
+}
+
+.about_us > h2 {
+    font-size: 20px;
+    padding: 1rem;
+}
+
+.about_us > h3 {
+    font-size: 16px;
+    font-weight: lighter;
+    padding: 0 1rem;
+    color: var(--text-color);
+}
+.product_footer > h2 {
+    font-size: 20px;
+    padding: 1rem;
+}
+
+.product_footer > h3 {
+    font-size: 16px;
+    font-weight: lighter;
+    padding: 0 1rem;
+    color: var(--text-color);
+}
+
+.social > h2 {
+    font-size: 20px;
+    padding: 1rem;
+}
+
+.social > i {
+    font-size: 20px;
+    padding: 0 1rem;
+    color: var(--text-color);
+}
+
+.my_repository {
+    height: 50px;
+    padding: 1rem 3rem;
+    margin: 2rem;
+    background-color: var(--first-color);
+    color: var(--body-color);
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
