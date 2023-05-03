@@ -208,6 +208,10 @@ header > nav > i {
     gap: 0.5rem;
 }
 
+.cart__product--body--op i {
+    cursor: pointer;
+}
+
 .cart__product--body--op .bx-trash-alt {
     color: var(--first-color);
 }

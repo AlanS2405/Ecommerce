@@ -98,7 +98,7 @@ function printProductsInCart(db) {
                     <h4>${name} | $${price}</h4>
                     <p>Stock: ${quantity}</p>
                     
-                    <div class="cart__product--body--op">
+                    <div class="cart__product--body--op" id='${id}'>
                     <i class='bx bx-minus'></i>
                     <span> ${amount} unit</span>
                     <i class='bx bx-plus' ></i>
@@ -112,6 +112,55 @@ function printProductsInCart(db) {
     cartProducts.innerHTML = html;
 }
 
+function handleProductsInCart (db) {
+    
+    const cart__products = document.querySelector(".cart__products");
+    cart__products.addEventListener('click', function(e) {
+        if (e.target.classList.contains('bx-plus')) {
+            const id = Number(e.target.parentElement.id);
+
+            let productFind = null
+
+            for (const product of db.products) {
+                if (product.id === id) {
+                    productFind = product;
+                    break;
+                }
+            };
+
+            if (productFind.quantity === db.cart[productFind.id].amount) 
+                return alert("No tenemos más en bodega");
+
+            
+            db.cart[id].amount++;    
+        }
+
+        if (e.target.classList.contains('bx-minus')) {
+            const id = Number(e.target.parentElement.id);
+            if (db.cart[id].amount === 1){
+                const response = confirm('Estás seguro de que quieres eliminar este producto?');
+
+                if (!response) return;
+                delete db.cart[id];
+            } else {
+                db.cart[id].amount--;
+            }
+        }
+
+        if (e.target.classList.contains('bx-trash-alt')) {
+            const id = Number(e.target.parentElement.id);
+            const response = confirm('Estás seguro de que quieres eliminar este producto?');
+
+            if (!response) return;
+            delete db.cart[id];
+        }
+
+        window.localStorage.setItem('cart', JSON.stringify(db.cart));
+        printProductsInCart(db);
+
+    })
+}
+
 async function main() {
     const db = {
         products: JSON.parse(window.localStorage.getItem('products')) ||
@@ -123,6 +172,8 @@ async function main() {
     handleShowCart();
     addToCartFromProducts(db);
     printProductsInCart(db);
-}
+    handleProductsInCart(db);
+
+};
 
 main();
