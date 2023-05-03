@@ -76,8 +76,40 @@ function addToCartFromProducts(db) {
             }
 
             window.localStorage.setItem("cart", JSON.stringify(db.cart));
+            printProductsInCart(db);
         }
     });
+}
+
+function printProductsInCart(db) {
+    const cartProducts = document.querySelector('.cart__products');
+
+    let html = ''
+
+    for (const product in db.cart) {
+        const {quantity, price, name, image, id, amount} = db.cart[product];
+
+        html += `
+            <div class="cart__product">
+                <div class="cart__product--img">
+                    <img src="${image}" alt="" />
+                </div>
+                <div class="cart__product--body">
+                    <h4>${name} | $${price}</h4>
+                    <p>Stock: ${quantity}</p>
+                    
+                    <div class="cart__product--body--op">
+                    <i class='bx bx-minus'></i>
+                    <span> ${amount} unit</span>
+                    <i class='bx bx-plus' ></i>
+                    <i class='bx bx-trash-alt'></i>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    cartProducts.innerHTML = html;
 }
 
 async function main() {
@@ -90,35 +122,7 @@ async function main() {
     printProducts(db);
     handleShowCart();
     addToCartFromProducts(db);
-
-
-    const cartProducts = document.querySelector('.cart__products');
-
-    let html = ''
-
-    for (const product in db.cart) {
-        const {quantity, price, name, image, id, amount} = db.cart[product];
-
-        html += `
-            <div class="cart__product">
-                <div.cart__product--img>
-                    <img src="${image}" alt="" />
-                <div/>
-                <div.class="cart__product--body">
-                    <h4>${name} | $${price}</h4>
-                    <p>Stock: ${quantity}</p>
-                <div/>
-                <div.class="cart__product--body--op">
-                    <i class='bx bx-minus'></i>
-                    <span>${amount} unit</span>
-                    <i class='bx bx-plus' ></i>
-                    <i class='bx bx-trash-alt'></i>
-                <div/>
-            </div>
-        `;
-    }
-
-    cartProducts.innerHTML = html;
+    printProductsInCart(db);
 }
 
 main();
