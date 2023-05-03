@@ -30,7 +30,7 @@ function printProducts(db) {
                 <h4>${product.name} | <span> <b>Stock</b>: ${product.quantity}</span></h4>
                 <h5>
                     ${product.price}
-                    <i class='bx bx-plus' id='${product.id}}'></i>
+                    <i class='bx bx-plus' id='${product.id}'></i>
                 </h5>
             </div>
         </div>
@@ -58,7 +58,33 @@ async function main() {
     };
 
     printProducts(db)
-    handleShowCart()
+    handleShowCart();
+
+    const productsHTML = document.querySelector(".products");
+
+    productsHTML.addEventListener("click", function (e) {
+        if (e.target.classList.contains("bx-plus")) {
+            const id = Number(e.target.id);
+
+            let productFind = null
+
+            for (const product of db.products) {
+                if (product.id === id) {
+                    productFind = product;
+                    break;
+                }
+            };
+
+            if (db.cart[productFind.id]){
+                if (productFind.quantity === db.cart[productFind.id].amount) return alert("No tenemos más en bodega");
+                db.cart[productFind.id].amount++;
+            } else {
+                db.cart[productFind.id] = {...productFind, amount: 1};
+            }
+
+            console.log(db);
+        }
+    });
 }
 
 main();
