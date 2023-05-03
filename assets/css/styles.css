@@ -73,7 +73,7 @@ img {
     font-size: 0.8rem;
 }
 
-.bx-plus {
+.product__info .bx-plus {
     padding: 0.5rem;
     border-radius: 50%;
     color: var(--button-color);
@@ -171,6 +171,8 @@ header > nav > i {
 .cart__products {
     background-color: blue;
     height: 85%;
+
+    overflow-y: scroll;
 }
 .cart__total {
     background-color: green;
