@@ -151,11 +151,17 @@ header > nav > i {
     background-color: var(--body-color);
     position: fixed;
     top: var(--h-header);
-    right: 0;
+    right: -100%;
     padding: 1rem;
 
     display: flex;
     flex-direction: column;
+
+    transition: right 0.3s;
+}
+
+.cart__show {
+    right: 0;
 }
 
 .cart__products {

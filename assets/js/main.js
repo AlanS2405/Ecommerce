@@ -40,6 +40,16 @@ function printProducts(db) {
     productsHTML.innerHTML = html;
 }
 
+function handleShowCart() {
+    const iconCartHTML = document.querySelector(".bx.bx-shopping-bag");
+    const cartHTML = document.querySelector(".cart")
+
+
+    iconCartHTML.addEventListener('click', function() {
+        cartHTML.classList.toggle("cart__show")
+    });
+}
+
 async function main() {
     const db = {
         products: JSON.parse(window.localStorage.getItem('products')) ||
@@ -48,6 +58,7 @@ async function main() {
     };
 
     printProducts(db)
+    handleShowCart()
 }
 
 main();
