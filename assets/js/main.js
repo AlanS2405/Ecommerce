@@ -20,6 +20,11 @@ function printProducts(db) {
     let html = ''
 
     for (const product of db.products) {
+        
+        const buttonAdd = product.quantity ? 
+            `<i class='bx bx-plus' id='${product.id}'></i>`
+            : "<span class='soldOut'>Sold out</span>";
+
         html += `
         <div class="product">
             <div class="product___img">
@@ -30,7 +35,7 @@ function printProducts(db) {
                 <h4>${product.name} | <span> <b>Stock</b>: ${product.quantity}</span></h4>
                 <h5>
                     ${product.price}
-                    <i class='bx bx-plus' id='${product.id}'></i>
+                    ${buttonAdd}
                 </h5>
             </div>
         </div>
@@ -77,6 +82,7 @@ function addToCartFromProducts(db) {
 
             window.localStorage.setItem("cart", JSON.stringify(db.cart));
             printProductsInCart(db);
+            printTotal(db);
         }
     });
 }
@@ -157,8 +163,66 @@ function handleProductsInCart (db) {
 
         window.localStorage.setItem('cart', JSON.stringify(db.cart));
         printProductsInCart(db);
+        printTotal(db);
 
     })
+}
+
+function printTotal(db) {
+    const infoTotal = document.querySelector('.info__total');
+    const infoAmount = document.querySelector('.info__amount');
+
+
+    let = totalPrice = 0
+    let = amountProducts = 0
+
+    for (const product in db.cart) {
+        const {amount, price} = db.cart[product];
+        totalPrice += price * amount;
+        amountProducts += db.cart[product].amount;
+    }
+
+    infoAmount.textContent = amountProducts + " items";
+    infoTotal.textContent = "$"+ totalPrice + ".00";
+    
+}
+
+function handleTotal(db) {
+    const btnBuy = document.querySelector(".btn__buy");
+    btnBuy.addEventListener('click', function () {
+        if (!Object.values(db.cart).length) 
+            return alert('Tu carrito se encuentra vacío 😢');
+        
+        const response = confirm("Seguro que quieres comprar?");
+        if (!response) return;
+
+        const currentProducts = [];
+
+        for (const product of db.products) {
+            const productCart = db.cart[product.id];
+            if (product.id === productCart?.id){
+                currentProducts.push({
+                    ...product,
+                    quantity: product.quantity - productCart.amount
+                });
+            } else {
+                currentProducts.push(product);
+            }
+        }  
+           
+        db.products = currentProducts;
+        db.cart = {};
+
+        window.localStorage.setItem("products", JSON.stringify(db.products));
+        window.localStorage.setItem("cart", JSON.stringify(db.cart));
+
+        printTotal(db);
+        printProductsInCart(db);
+        printProducts(db);
+
+
+
+    });
 }
 
 async function main() {
@@ -173,7 +237,11 @@ async function main() {
     addToCartFromProducts(db);
     printProductsInCart(db);
     handleProductsInCart(db);
+    printTotal(db);
+    handleTotal(db);
 
-};
+}
+
+
 
 main();
