@@ -37,6 +37,11 @@ img {
 a {
     text-decoration: none;
     color: inherit;
+    transition: hover 2s;
+}
+
+a:hover {
+    color: var(--first-color);
 }
 
 /*------------------------------------------------NAVBAR*/
@@ -181,7 +186,8 @@ header {
 }
 
 .info_box button:hover{
-    background-color: var(--first-color);
+    /* background-color: var(--first-color); */
+    color: var(--body-color);
 }
 
 /*------------------------------------------------PRODUCTS*/
@@ -365,6 +371,7 @@ footer {
 .links__footer{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 1.5rem;
 }
 
@@ -446,19 +453,26 @@ footer {
     /* padding: 1rem 2rem; */
 }
 
-.social > .icons > i {
+.icons > ul {
+    display: flex;
+    /* justify-content: center; */
+    gap: 1rem;
+}
+
+.social > .icons > ul > li {
     font-size: 25px;
     color: var(--text-color);
     /* padding: 0 0 0 1.5rem; */
 }
 
 .my_repository {
-    height: 50px;
+    /* height: 50px; */
     padding: 1rem;
-    margin: 3rem 0;
+    margin: 3rem 0 0 0;
     background-color: var(--first-color);
     color: var(--body-color);
     font-weight: bold;
+    text-align: center;
 
     display: flex;
     justify-content: center;
@@ -523,34 +537,32 @@ footer {
         top: 50px;
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        /* justify-content: center; */
         width: 100%;
         max-width: 1024px;
-        min-height: 250px;
-
     }
 
     .our_information > h3 {
         font-size: 20px;
-        padding: 1rem 2rem;
+        /* padding: 1rem 2rem; */
     }
 
     .our_information > ul > li {
         font-size: 16px;
         font-weight: lighter;
-        padding: 0 0 0.5rem 2rem;
+        /* padding: 0 0 0.5rem 2rem; */
         color: var(--text-color);
     }
 
     .about_us > h3 {
         font-size: 20px;
-        padding: 1rem 2rem;
+        /* padding: 1rem 2rem; */
     }
 
     .about_us > ul > li {
         font-size: 16px;
         font-weight: lighter;
-        padding: 0 0 0.5rem 2rem;
+        /* padding: 0 0 0.5rem 2rem; */
         color: var(--text-color);
 
         display: flex;
@@ -559,25 +571,25 @@ footer {
 
     .product_footer > h3 {
         font-size: 20px;
-        padding: 1rem 2rem;
+        /* padding: 1rem 2rem; */
     }
 
     .product_footer > ul > li {
         font-size: 16px;
         font-weight: lighter;
-        padding: 0 0 0.5rem 2rem;
+        /* padding: 0 0 0.5rem 2rem; */
         color: var(--text-color);
     }
 
     .social > h3 {
         font-size: 20px;
-        padding: 1rem 2rem;
+        /* padding: 1rem 2rem; */
     }
 
     .social > i {
         font-size: 25px;
         color: var(--text-color);
-        padding: 0 0 0 1rem;
+        /* padding: 0 0 0 1rem; */
     }
 
     .my_repository {
