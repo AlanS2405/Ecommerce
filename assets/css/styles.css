@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
     list-style: none;
 }
 
@@ -40,9 +42,9 @@ a {
     transition: hover 2s;
 }
 
-a:hover {
+/* a:hover {
     color: var(--first-color);
-}
+} */
 
 /*------------------------------------------------NAVBAR*/
 header > nav {
@@ -182,12 +184,11 @@ header {
     color: var(--body-color);
     border: none;
     cursor: pointer;
-    transition: hover 1s;
+    transition: background-color 0.4s;
 }
 
 .info_box button:hover{
-    /* background-color: var(--first-color); */
-    color: var(--body-color);
+    background-color: var(--first-color);
 }
 
 /*------------------------------------------------PRODUCTS*/
@@ -202,10 +203,9 @@ header {
 }
 
 .product {
-    border-top-right-radius: 1rem;
-    border-top-left-radius: 1rem;
-    background-color: var(--card-color);
+    border-radius: 1rem;
     margin: 0.8rem;
+    background-color: var(--card-color);
 }
 
 .product__img {
@@ -213,6 +213,7 @@ header {
 }
 
 .product__info {
+    background-color: var(--container-color);
     padding: 1rem;
 
     display: flex;
@@ -222,6 +223,7 @@ header {
 
 .product__info h4 {
     min-height: 54px;
+    color: var(--title-color);
 }
 
 .product__info span {
@@ -373,6 +375,11 @@ footer {
     flex-direction: column;
     justify-content: space-between;
     gap: 1.5rem;
+    transition: color 0.4s;
+}
+
+.links__footer a:hover {
+    color: var(--first-color);
 }
 
 .our_information {
@@ -473,8 +480,10 @@ footer {
     color: var(--body-color);
     font-weight: bold;
     text-align: center;
+    gap: 2rem;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -602,9 +611,14 @@ footer {
         font-weight: bold;
 
         display: flex;
+        flex-direction: row;
+        gap: 10rem;
         justify-content: center;
         align-items: center;
+    }
 
+    .repository:hover {
+        color: var(--text-color);
     }
 
 }
