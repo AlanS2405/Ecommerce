@@ -238,6 +238,31 @@ function handlePrintAmountProducts(db) {
     amountProducts.textContent = amount;
 }
 
+function handleShowMenu () {
+    const iconMenuHTML = document.querySelector(".iconMenu");
+const menuHTML = document.querySelector(".menu");
+
+iconMenuHTML.addEventListener('click', function () {
+    menuHTML.classList.toggle("menu_show")
+})
+}
+
+function animationNavbarScroll() {
+    const contentNavbarHTML = document.querySelector(".content_navbar");
+
+    function animationScroll () {
+        let y = window.scrollY
+
+        if (y > 200) {
+            contentNavbarHTML.classList.add("content_navbar_scroll");
+        } else {
+            contentNavbarHTML.classList.remove("content_navbar_scroll");
+        }
+    }
+
+    window.onscroll = () => animationScroll();
+}
+
 async function main() {
     const db = {
         products: JSON.parse(window.localStorage.getItem('products')) ||
@@ -246,7 +271,9 @@ async function main() {
     };
 
     printProducts(db);
+    animationNavbarScroll();
     handleShowCart();
+    handleShowMenu ();
     addToCartFromProducts(db);
     printProductsInCart(db);
     handleProductsInCart(db);
@@ -254,8 +281,8 @@ async function main() {
     handleTotal(db);
     handlePrintAmountProducts(db);
     
+    
 }
-
 
 
 main();
