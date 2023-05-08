@@ -253,7 +253,7 @@ function animationNavbarScroll() {
     function animationScroll () {
         let y = window.scrollY
 
-        if (y > 200) {
+        if (y > 80) {
             contentNavbarHTML.classList.add("content_navbar_scroll");
         } else {
             contentNavbarHTML.classList.remove("content_navbar_scroll");

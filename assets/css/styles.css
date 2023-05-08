@@ -572,6 +572,10 @@ footer {
         position: fixed;
     }
 
+    .content_navbar_scroll {
+        background-color: var(--body-color);
+    }
+
     .navbar {
         margin: 0 auto;
         max-width: 1024px;
