@@ -32,11 +32,14 @@ function printProducts(db) {
             </div>
 
             <div class="product__info">
-                <h4>${product.name} | <span> <b>Stock</b>: ${product.quantity}</span></h4>
-                <h5>
-                    $${product.price}
+                <div>
                     ${buttonAdd}
-                </h5>
+                </div>
+                <h3>
+                $${product.price}
+                <span>Stock: ${product.quantity}</span>
+            </h3>
+                <h4>${product.name}</h4>
             </div>
         </div>
         `;
