@@ -44,9 +44,15 @@ a {
     transition: hover 2s;
 }
 
-/* a:hover {
-    color: var(--first-color);
-} */
+body::-webkit-scrollbar {
+    width: 8.5px;
+    height: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--first-color);
+    border-radius: 1rem;
+}
 
 /*------------------------------------------------NAVBAR*/
 
