@@ -62,6 +62,7 @@ body::-webkit-scrollbar-thumb {
     top: 0;
     left: 0;
     position: fixed;
+    z-index: 1000;
 }
 
 .content_navbar_scroll {
@@ -123,27 +124,6 @@ body::-webkit-scrollbar-thumb {
     right: 0vh;
 }
 
-
-/* .navbar {
-    max-width: 1024px;
-    width: 100%;
-    margin: 0 auto;
-
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0 1rem;
-    
-}
-
-.navbar > i {
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0.5rem;
-
-    position: relative;
-} */
-
 .amountProducts {
     width: 20px;
     height: 20px;
@@ -162,53 +142,7 @@ body::-webkit-scrollbar-thumb {
     top: 0.8rem;
 }
 
-
-/* .navbar {
-    background-color: red;
-    height: 50px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.iconos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.box1 {
-    height: 40vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.side_right{
-    background-color: var(--first-color);
-}
-
-.side_right img {
-    display: block;
-    max-width: 100%;
-} */
-
-/*------------------------------------------------HEADER*/
-/* header {
-    height: var(--h-header);
-    background-color: var(--body-color);
-
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-
-    display: flex;
-} */
+/*------------------------------------------------HOME*/
 
 #home {
     display: grid;
@@ -269,7 +203,6 @@ body::-webkit-scrollbar-thumb {
 
 /*------------------------------------------------PRODUCTS*/
 .products {
-    /* padding-top: 3rem; */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     max-width: 1024px;
@@ -378,12 +311,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 .cart__product {
-    /* padding: 1rem; */
-
     display: flex;
     align-items: center;
     border-radius: 1rem;
-
 }
 
 .cart__product--img {
@@ -418,7 +348,6 @@ body::-webkit-scrollbar-thumb {
 
 
 .cart__total {
-    /* background-color: green; */
     height: 15%;
 
     display: flex;
@@ -429,7 +358,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 .cart__total--info {
-    /* background-color: red; */
     color: var(--text-color);
     width: 100%;
     padding: 0.3rem;
@@ -487,13 +415,11 @@ footer {
 
 .our_information > h3 {
     font-size: 20px;
-    /* padding: 1rem 2rem; */
 }
 
 .our_information > ul > li {
     font-size: 16px;
     font-weight: lighter;
-    /* padding: 0 2rem; */
     color: var(--text-color);
 }
 
@@ -506,7 +432,6 @@ footer {
 
 .about_us > h3 {
     font-size: 20px;
-    /* padding: 1rem 2rem; */
 }
 
 .about_us > ul {
@@ -518,7 +443,6 @@ footer {
 .about_us > ul > li {
     font-size: 16px;
     font-weight: lighter;
-    /* padding: 0 2rem; */
     color: var(--text-color);
 }
 
@@ -530,7 +454,6 @@ footer {
 
 .product_footer > h3 {
     font-size: 20px;
-    /* padding: 1rem 2rem; */
 }
 
 .product_footer > ul {
@@ -542,7 +465,6 @@ footer {
 .product_footer > ul > li {
     font-size: 16px;
     font-weight: lighter;
-    /* padding: 0 2rem; */
     color: var(--text-color);
 }
 
@@ -554,23 +476,19 @@ footer {
 
 .social > h3 {
     font-size: 20px;
-    /* padding: 1rem 2rem; */
 }
 
 .icons > ul {
     display: flex;
-    /* justify-content: center; */
     gap: 1rem;
 }
 
 .social > .icons > ul > li {
     font-size: 25px;
     color: var(--text-color);
-    /* padding: 0 0 0 1.5rem; */
 }
 
 .my_repository {
-    /* height: 50px; */
     padding: 1rem;
     margin: 3rem 0 0 0;
     background-color: var(--first-color);
@@ -638,16 +556,6 @@ footer {
 
     
 /*------------------------------------------------HOME*/
-    /* .home {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        max-width: 1024px;
-        min-height: 500px;
-        display: flex;
-        margin: 0 auto;
-        gap: 1rem;
-    } */
 
     #home {
         max-width: 1024px;
@@ -661,7 +569,6 @@ footer {
         display: flex;
         flex-direction: column;
         padding: 1rem;
-        /* grid-column: 1/4; */
         gap: 1rem;
 
         display: flex;
@@ -678,7 +585,6 @@ footer {
         justify-content: center;
         background-color: var(--first-color);
         min-height: 400px;
-        /* grid-column: 4/5; */
     }
 
     /*------------------------------------------------FOOTER*/
@@ -694,32 +600,27 @@ footer {
         top: 50px;
         display: flex;
         flex-direction: row;
-        /* justify-content: center; */
         width: 100%;
         max-width: 1024px;
     }
 
     .our_information > h3 {
         font-size: 20px;
-        /* padding: 1rem 2rem; */
     }
 
     .our_information > ul > li {
         font-size: 16px;
         font-weight: lighter;
-        /* padding: 0 0 0.5rem 2rem; */
         color: var(--text-color);
     }
 
     .about_us > h3 {
         font-size: 20px;
-        /* padding: 1rem 2rem; */
     }
 
     .about_us > ul > li {
         font-size: 16px;
         font-weight: lighter;
-        /* padding: 0 0 0.5rem 2rem; */
         color: var(--text-color);
 
         display: flex;
@@ -728,25 +629,21 @@ footer {
 
     .product_footer > h3 {
         font-size: 20px;
-        /* padding: 1rem 2rem; */
     }
 
     .product_footer > ul > li {
         font-size: 16px;
         font-weight: lighter;
-        /* padding: 0 0 0.5rem 2rem; */
         color: var(--text-color);
     }
 
     .social > h3 {
         font-size: 20px;
-        /* padding: 1rem 2rem; */
     }
 
     .social > i {
         font-size: 25px;
         color: var(--text-color);
-        /* padding: 0 0 0 1rem; */
     }
 
     .my_repository {
