@@ -26,7 +26,7 @@ function printProducts(db) {
             : "<span class='soldOut'>Sold out</span>";
 
         html += `
-        <div class="product">
+        <div class="product ${product.category}">
             <div class="product___img">
                 <img src="${product.image}" alt="imagen"/>
             </div>
@@ -48,9 +48,20 @@ function printProducts(db) {
     productsHTML.innerHTML = html;
 }
 
+function handleShowCartWithX() {
+    const cartHTML = document.querySelector(".cart");
+    const xOfCartHTML = document.querySelector(".xOfCart");
+
+
+    xOfCartHTML.addEventListener('click', function() {
+        cartHTML.classList.toggle("cart__show")
+    });
+}
+
 function handleShowCart() {
     const iconCartHTML = document.querySelector(".bx.bx-shopping-bag");
-    const cartHTML = document.querySelector(".cart")
+    const cartHTML = document.querySelector(".cart");
+    const xOfcartHTML = document.querySelector(".xOfCart");
 
 
     iconCartHTML.addEventListener('click', function() {
@@ -105,9 +116,9 @@ function printProductsInCart(db) {
                     <img src="${image}" alt="" />
                 </div>
                 <div class="cart__product--body">
-                    <h4>${name} | $${price}</h4>
-                    <p>Stock: ${quantity}</p>
-                    
+                    <h4>${name}</h4>
+                    <p class="stock_and_price">Stock: ${quantity} | <span>$${price}</span></p>
+                    <p class="subtotal">Subtotal: $${amount * price}</p>
                     <div class="cart__product--body--op" id='${id}'>
                     <i class='bx bx-minus'></i>
                     <span> ${amount} unit</span>
@@ -274,6 +285,18 @@ function darkMode () {
         darkModeHTML.classList.toggle("darkmode");
         iconDarkModeHTML.classList.toggle("bx-sun")
     })
+
+    if (darkModeHTML.classList.contains('darkmode')){
+        localStorage.setItem('darkmode', JSON.stringify(true));
+    } else {
+        localStorage.setItem('darkmode', JSON.stringify(false));
+    };
+
+    if (localStorage.getItem('darkmode') === 'true'){
+        darkModeHTML.classList.add('darkmode');
+    } else {
+        darkModeHTML.classList.remove('darkmode');
+    }
 };
 
 function loading () {
@@ -285,18 +308,29 @@ function loading () {
     });
 };
 
+function handleMixtUp () {
+    mixitup(".products", {
+        selectors: {
+            target: '.product'
+        },
+        animation: {
+            duration: 300
+        }
+    });
+}
 
 async function main() {
     const db = {
         products: JSON.parse(window.localStorage.getItem('products')) ||
          (await getProducts()),
-         cart: JSON.parse(window.localStorage.getItem('cart')) || {}
+        cart: JSON.parse(window.localStorage.getItem('cart')) || {},
     };
 
     printProducts(db);
     loading ();
     animationNavbarScroll();
     darkMode ();
+    handleShowCartWithX();
     handleShowCart();
     handleShowMenu ();
     addToCartFromProducts(db);
@@ -305,7 +339,7 @@ async function main() {
     printTotal(db);
     handleTotal(db);
     handlePrintAmountProducts(db);
-    
+    handleMixtUp ();
     
 }
 

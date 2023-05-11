@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js" integrity="sha512-nKZDK+ztK6Ug+2B6DZx+QtgeyAmo9YThZob8O3xgjqhw2IVQdAITFasl/jqbyDwclMkLXFOZRiytnUrXk/PM6A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./assets/css/styles.css">
     <script src="./assets/js/main.js" defer></script>
@@ -29,7 +30,7 @@
             </div>
         </div>
 
-        <div id="home" class="home">
+        <section id="home" class="home">
             <header class="content_navbar ">
                 <nav class="navbar">
                     <div class="logo_and_menu">
@@ -75,11 +76,32 @@
                     <img src="https://academlostorev1.netlify.app/images/sweater2.png" alt="buzo">
             </div>
     
-        </div>
-           
-        <div id="products" class="products"></div>
-    
+        </section>
+
+        <section id="products" class="content_products">
+            <div class="products_filter">
+                <button class="btn_filter" data-filter="all">
+                    <p class="title_filter">Show All</p>
+                    <p class="description_filter">Show all products</p>
+                </button>
+                <button class="btn_filter" data-filter=".shirt">
+                    <p class="title_filter">Shirt</p>
+                    <p class="description_filter">7 products</p>
+                </button>
+                <button class="btn_filter" data-filter=".hoddie">
+                    <p class="title_filter">Hoddie</p>
+                    <p class="description_filter">6 products</p>
+                </button>
+                <button class="btn_filter" data-filter=".sweater">
+                    <p class="title_filter">Sweater</p>
+                    <p class="description_filter">5 products</p>
+                </button>
+            </div>
+            <div class="products"></div>
+        </section>
+
         <div class="cart">
+            <i class='bx bx-x xOfCart'></i>
             <div class="cart__products"></div>
             <div class="cart__total">
                 <div class="cart__total--info">
