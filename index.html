@@ -10,112 +10,132 @@
     <title>Academlo Store</title>
 </head>
 <body>
-    <div id="home" class="home">
-        <header class="content_navbar ">
-            <nav class="navbar">
-                <div class="logo_and_menu">
-                    <a href="#home">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.92 56.48" class="nav_logo-icon">
-                        <title>Academlo Logo</title>
+    <div class="main">
+        <div class="content_loading">
+            <div class="loading">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.92 56.48" class="load__gif">
+                    <title>Academlo Logo</title>
+                    <g>
                         <g>
-                            <g>
-                                <path d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z">
-                                </path>
-                            </g>
+                            <path
+                                d="M24.45,56.48,0,42.36V14.12L24.46,0,48.92,14.12V42.36ZM1.89,41.26l22.56,13L47,41.26v-26l-22.56-13-22.56,13Z">
+                            </path>
+                            <path
+                                d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z">
+                            </path>
                         </g>
-                    </svg>
-                </a>
-                    <span>STORE</span>        
-                    <ul class="menu">
-                        <li>
-                            <a href="#home">Home</a>
-                        </li>
-                        <li>
-                            <a href="#products">Products</a>
-                        </li>
-                    </ul>
+                    </g>
+                </svg>
+            </div>
+        </div>
+
+        <div id="home" class="home">
+            <header class="content_navbar ">
+                <nav class="navbar">
+                    <div class="logo_and_menu">
+                        <a href="#home">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.92 56.48" class="nav_logo-icon">
+                            <title>Academlo Logo</title>
+                            <g>
+                                <g>
+                                    <path d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                        <span>STORE</span> 
+                    </a>       
+                        <ul class="menu">
+                            <li>
+                                <a href="#home">Home</a>
+                            </li>
+                            <li>
+                                <a href="#products">Products</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="icons">
+                        <i class='bx bx-moon'></i>
+                        <i class='bx bx-shopping-bag'>
+                            <span class="amountProducts"></span>
+                        </i>
+                        <i class='bx bxs-dashboard iconMenu'></i>
+                    </div>
+                </nav>
+           </header>
+    
+           <div class="info_box">
+                    <h2>New Sweatshirt COLLECTIONS 2022</h2>
+                    <p class="description">Latest arrival of the new Hanes Midweight Crewneck sweatshirt imported from the 2022 series, with a modern design.</p>
+                    <p class="price">$14.00</p>
+                    <button><a href="#products">Show More</a></button>
+            </div>
+    
+            <div class="img_box">
+                    <img src="https://academlostorev1.netlify.app/images/sweater2.png" alt="buzo">
+            </div>
+    
+        </div>
+           
+        <div id="products" class="products"></div>
+    
+        <div class="cart">
+            <div class="cart__products"></div>
+            <div class="cart__total">
+                <div class="cart__total--info">
+                    <span class="info__amount">Cantidad</span>
+                    <span class="info__total">Total</span>
                 </div>
-                <div class="icons">
-                    <i class='bx bx-moon'></i>
-                    <i class='bx bx-shopping-bag'>
-                        <span class="amountProducts"></span>
-                    </i>
-                    <i class='bx bxs-dashboard iconMenu'></i>
-                </div>
-            </nav>
-       </header>
-
-       <div class="info_box">
-                <h2>New Sweatshirt COLLECTIONS 2022</h2>
-                <p class="description">Latest arrival of the new Hanes Midweight Crewneck sweatshirt imported from the 2022 series, with a modern design.</p>
-                <p class="price">$14.00</p>
-                <button><a href="#products">Show More</a></button>
+    
+                <button class="btn__buy">Comprar</button>
+            </div>
         </div>
-
-        <div class="img_box">
-                <img src="https://academlostorev1.netlify.app/images/sweater2.png" alt="buzo">
-        </div>
-
-    </div>
-       
-    <div id="products" class="products"></div>
-
-    <div class="cart">
-        <div class="cart__products"></div>
-        <div class="cart__total">
-            <div class="cart__total--info">
-                <span class="info__amount">Cantidad</span>
-                <span class="info__total">Total</span>
-            </div>
-
-            <button class="btn__buy">Comprar</button>
-        </div>
-    </div>
-
-    <footer id="footer">
-        <div class="links__footer">
-            <div class="our_information">
-                <h3>Our information</h3>
-                <ul>
-                    <li>
-                        <a href="#home">Toluca - México</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="about_us">
-                <h3>About Us</h3>
-                <ul>
-                    <li><a href="#home">Support Center</a></li>
-                    <li><a href="#home">Customer Support</a></li>
-                    <li><a href="#home">About Us</a></li>
-                    <li><a href="#home">Copy Right</a></li>
-                </ul>
-            </div>
-            <div class="product_footer">
-                <h3>Product</h3>
-                <ul>
-                    <li><a href="#home">Hoodies</a></li>
-                    <li><a href="#home">Shirts</a></li>
-                    <li><a href="#home">About Us</a></li>
-                    <li><a href="#home">Sweatshirts</a></li>
-                </ul>
-            </div>
-            <div class="social">
-                <h3>Social</h3>
-                <div class="icons">
+    
+        <footer id="footer">
+            <div class="links__footer">
+                <div class="our_information">
+                    <h3>Our information</h3>
                     <ul>
-                        <li><a href="#home"><i class='bx bxl-facebook'></i></a></li>
-                        <li><a href="#home"><i class='bx bxl-twitter' ></i></a></li>
-                        <li><a href="#home"><i class='bx bxl-instagram' ></i></a></li>
+                        <li>
+                            <a href="#home">Toluca - México</a>
+                        </li>
                     </ul>
                 </div>
+                <div class="about_us">
+                    <h3>About Us</h3>
+                    <ul>
+                        <li><a href="#home">Support Center</a></li>
+                        <li><a href="#home">Customer Support</a></li>
+                        <li><a href="#home">About Us</a></li>
+                        <li><a href="#home">Copy Right</a></li>
+                    </ul>
+                </div>
+                <div class="product_footer">
+                    <h3>Product</h3>
+                    <ul>
+                        <li><a href="#home">Hoodies</a></li>
+                        <li><a href="#home">Shirts</a></li>
+                        <li><a href="#home">About Us</a></li>
+                        <li><a href="#home">Sweatshirts</a></li>
+                    </ul>
+                </div>
+                <div class="social">
+                    <h3>Social</h3>
+                    <div class="icons">
+                        <ul>
+                            <li><a href="#home"><i class='bx bxl-facebook'></i></a></li>
+                            <li><a href="#home"><i class='bx bxl-twitter' ></i></a></li>
+                            <li><a href="#home"><i class='bx bxl-instagram' ></i></a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="my_repository">
-            <li>Nombre: Alan Darío Solís</li>
-            <li>Correo: alan.dario.solis@gmail.com</li>
-            <li class="repository" ><a href="https://github.com/AlanS2405/Ecommerce">Repositorio</a></li>
-        </div>
-    </footer>
+            <div class="my_repository">
+                <li>Nombre: Alan Darío Solís</li>
+                <li>Correo: alan.dario.solis@gmail.com</li>
+                <li class="repository" ><a href="https://github.com/AlanS2405/Ecommerce">Repositorio</a></li>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>

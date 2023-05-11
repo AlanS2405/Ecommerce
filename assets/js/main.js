@@ -242,7 +242,7 @@ function handlePrintAmountProducts(db) {
 }
 
 function handleShowMenu () {
-    const iconMenuHTML = document.querySelector(".iconMenu");
+const iconMenuHTML = document.querySelector(".iconMenu");
 const menuHTML = document.querySelector(".menu");
 
 iconMenuHTML.addEventListener('click', function () {
@@ -266,6 +266,26 @@ function animationNavbarScroll() {
     window.onscroll = () => animationScroll();
 }
 
+function darkMode () {
+    const iconDarkModeHTML = document.querySelector(".bx-moon");
+    const darkModeHTML = document.querySelector("body");
+    
+    iconDarkModeHTML.addEventListener('click', function () {
+        darkModeHTML.classList.toggle("darkmode");
+        iconDarkModeHTML.classList.toggle("bx-sun")
+    })
+};
+
+function loading () {
+    window.addEventListener('load', function () {
+        setTimeout(function() {    
+            const contentLoadingHTML = document.querySelector('.content_loading');
+            contentLoadingHTML.classList.add("content_loading_none");
+        }, 1500);
+    });
+};
+
+
 async function main() {
     const db = {
         products: JSON.parse(window.localStorage.getItem('products')) ||
@@ -274,7 +294,9 @@ async function main() {
     };
 
     printProducts(db);
+    loading ();
     animationNavbarScroll();
+    darkMode ();
     handleShowCart();
     handleShowMenu ();
     addToCartFromProducts(db);
@@ -286,6 +308,5 @@ async function main() {
     
     
 }
-
 
 main();

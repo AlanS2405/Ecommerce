@@ -7,7 +7,7 @@
     font-family: 'Roboto', sans-serif;
     list-style: none;
     scroll-behavior: smooth;
-
+    transition: background-color 0.4s, color 0.4s;
 }
 
 :root {
@@ -29,7 +29,19 @@
     --z-modalproduct: 4000;
 }
 
-body {
+body.darkmode {
+    --first-color: hsl(182, 53%, 74%);
+    --button-color: hsl(246, 16%, 12%);
+    --button-color-alt: hsl(0, 0%, 28%);
+    --card-color: hsla(246, 16%, 5%);
+    --title-color: hsl(0, 0%, 95%);
+    --text-color: hsl(0, 0%, 75%);
+    --body-color: hsl(249, 19%, 14%);
+    --container-color: hsl(246, 16%, 12%);
+    --border-color: hsl(0, 0%, 20%);
+}
+
+.main {
     background-color: var(--body-color);
 }
 
@@ -54,16 +66,64 @@ body::-webkit-scrollbar-thumb {
     border-radius: 1rem;
 }
 
+/*------------------------------------------------LOADING*/
+.content_loading {
+    height: 100%;
+    width: 100%;
+    background-color: var(--body-color);
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+.content_loading_none {
+    opacity: 0;
+    visibility: hidden;}
+
+.loading {
+    fill: var(--first-color);
+    width: 100px;
+    height: 100px;
+    animation: animationLoading 2s infinite;
+}
+
+@keyframes animationLoading {
+    0% {
+        transform: translateY(-20px);
+    }
+
+    50% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(-20px);
+    }
+} 
+
+
 /*------------------------------------------------NAVBAR*/
 
 .content_navbar {
     background-color: transparent;
+    height: var(--h-header);
     width: 100%;
     top: 0;
     left: 0;
     position: fixed;
     z-index: 1000;
     transition: background-color 0.3s;
+
 }
 
 .content_navbar_scroll {
@@ -72,15 +132,14 @@ body::-webkit-scrollbar-thumb {
 }
 
 .navbar {
+    height: var(--h-header);
     margin: 0 auto;
     max-width: 1024px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    height: var(--h-header);
-
     padding: 0 1rem;
+    font-weight: bold;
 }
 
 .nav_logo-icon {
@@ -95,7 +154,18 @@ body::-webkit-scrollbar-thumb {
     align-items: center;
 }
 
-.navbar i {
+.logo_and_menu a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo_and_menu span {
+    color: var(--title-color);
+}
+
+
+.icons i {
     font-size: 1.5rem;
     cursor: pointer;
     position: relative;
@@ -120,6 +190,10 @@ body::-webkit-scrollbar-thumb {
     gap: 1rem;
 
     transition: right 0.5s;
+}
+
+.menu li {
+    color: var(--title-color);
 }
 
 .menu_show {
@@ -193,13 +267,14 @@ body::-webkit-scrollbar-thumb {
     font-size: 1rem;
     font-weight: bold;
     background-color: var(--button-color);
-    color: var(--body-color);
+    color: white;
     border: none;
     cursor: pointer;
-    transition: background-color 0.4s;
+    transition: background-color 0.4s, color 0.4s;
 }
 
 .info_box button:hover{
+    color: var(--body-color);
     background-color: var(--first-color);
 }
 
@@ -242,6 +317,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .product__info h3 {
+    color: var(--title-color);
     padding: 0 0 0.5rem 0;
 }
 
@@ -265,7 +341,7 @@ body::-webkit-scrollbar-thumb {
 .product__info .bx-plus {
     padding: 0.5rem;
     border-radius: 50%;
-    color: var(--button-color);
+    color: var(--title-color);
     background-color: var(--container-color);
     font-size: 1.5rem;
     cursor: pointer;
@@ -376,7 +452,7 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
     border: none;
     background-color: var(--button-color);
-    color: var(--body-color);
+    color: white;
     font-weight: 700;
     font-size: 0.8rem;
     cursor: pointer;
@@ -402,7 +478,12 @@ footer {
     flex-direction: column;
     justify-content: space-between;
     gap: 1.5rem;
+    color: var(--title-color);
     transition: color 0.4s;
+}
+
+.links__footer a {
+    color: var(--text-color);
 }
 
 .links__footer a:hover {
@@ -485,9 +566,13 @@ footer {
     gap: 1rem;
 }
 
-.social > .icons > ul > li {
+.social > .icons > ul > li > a > i{
     font-size: 25px;
     color: var(--text-color);
+}
+
+.social > .icons > ul > li > a > i:hover{
+    color: var(--first-color);
 }
 
 .my_repository {
@@ -511,35 +596,6 @@ footer {
 
 @media (min-width: 700px) {
 /*------------------------------------------------NAVBAR*/
-    .content_navbar {
-        background-color: transparent;
-        width: 100%;
-        top: 0;
-        left: 0;
-        position: fixed;
-    }
-
-    .content_navbar_scroll {
-        background-color: var(--body-color);
-    }
-
-    .navbar {
-        margin: 0 auto;
-        max-width: 1024px;
-        display: flex;
-        align-items: center;
-
-        height: var(--h-header);
-
-        padding: 0 1rem;
-    }
-
-    .logo_and_menu {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
     .menu {
         background-color: transparent;
         font-size: 1rem;
