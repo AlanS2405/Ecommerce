@@ -284,19 +284,20 @@ function darkMode () {
     iconDarkModeHTML.addEventListener('click', function () {
         darkModeHTML.classList.toggle("darkmode");
         iconDarkModeHTML.classList.toggle("bx-sun")
+
+        if (darkModeHTML.classList.contains('darkmode')){
+            localStorage.setItem('darkmode', JSON.stringify(true));
+        } else {
+            localStorage.setItem('darkmode', JSON.stringify(false));
+        };
     })
-
-    if (darkModeHTML.classList.contains('darkmode')){
-        localStorage.setItem('darkmode', JSON.stringify(true));
-    } else {
-        localStorage.setItem('darkmode', JSON.stringify(false));
-    };
-
+        
     if (localStorage.getItem('darkmode') === 'true'){
         darkModeHTML.classList.add('darkmode');
     } else {
         darkModeHTML.classList.remove('darkmode');
     }
+
 };
 
 function loading () {
